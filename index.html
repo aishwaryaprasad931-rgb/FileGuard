@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileGuard | File Integrity Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">🛡️ FileGuard</div>
+        <span class="secure">● Secure Browser Processing</span>
+    </header>
+
+    <main>
+        <section class="hero">
+            <p class="tag">CYBERSECURITY TOOL</p>
+            <h1>Check Your File Integrity</h1>
+            <p class="subtitle">
+                Generate SHA-256 hashes and verify whether your files
+                have been modified.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>📁 Generate File Hash</h2>
+            <p>Select a file to generate its unique SHA-256 hash.</p>
+
+            <label class="upload-box" for="singleFile">
+                <span class="upload-icon">⬆</span>
+                <strong>Click to upload a file</strong>
+                <small>Any file type is supported</small>
+            </label>
+
+            <input type="file" id="singleFile" hidden>
+
+            <p id="singleFileName" class="file-name"></p>
+
+            <button id="generateBtn">Generate SHA-256 Hash</button>
+
+            <div id="hashResult" class="result hidden">
+                <h3>Generated Hash</h3>
+                <div id="hashValue" class="hash"></div>
+                <div class="actions">
+                    <button id="copyBtn" class="secondary">Copy Hash</button>
+                    <button id="downloadBtn" class="secondary">Download Report</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>🔍 Compare Two Files</h2>
+            <p>Upload two files to check whether their contents match.</p>
+
+            <div class="compare-grid">
+                <div>
+                    <label for="fileOne">First File</label>
+                    <input type="file" id="fileOne">
+                </div>
+                <div>
+                    <label for="fileTwo">Second File</label>
+                    <input type="file" id="fileTwo">
+                </div>
+            </div>
+
+            <button id="compareBtn">Compare Files</button>
+
+            <div id="compareResult" class="result hidden"></div>
+        </section>
+
+        <section class="info">
+            <h2>Why SHA-256?</h2>
+            <p>
+                SHA-256 is a cryptographic hash function that produces
+                a 256-bit fingerprint for a file. Even a small change
+                in the file usually produces a different hash.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 FileGuard | Built with HTML, CSS & JavaScript</p>
+        <p>Your files are processed locally in your browser.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
